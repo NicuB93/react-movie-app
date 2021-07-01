@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
+import SearchBox from "./components/SearchBox/SearchBox";
+import NavBar from "./components/NavBar/NavBar";
+import "tachyons";
+import * as pages from "./pages";
+import WithMovies from "./WithMovies";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <WithMovies>
+        <div className="bg-near-black near-white">
+          <div className="flex items-center justify-between pa2">
+            <h2>Movie App</h2>
+            <NavBar />
+            <SearchBox onSearch={this.onSearchChange} />
+          </div>
+
+          <Switch>
+            <Route path="/" exact>
+              <pages.Home />
+            </Route>
+            <Route path="/popular" exact>
+              <pages.Popular />
+            </Route>
+            <Route path="/toprated" exact>
+              <pages.TopRated />
+            </Route>
+            <Route path="/new" exact>
+              <pages.New />
+            </Route>
+          </Switch>
+        </div>
+      </WithMovies>
+    );
+  }
 }
-
-export default App;

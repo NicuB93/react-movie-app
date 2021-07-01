@@ -1,0 +1,13 @@
+.input-search {
+  background-color: whitesmoke;
+  border-radius: 5px;
+  padding: 0.5rem;
+  color: lightslategray;
+}
+
+.input {
+  background-color: rgba(189, 189, 189, 0);
+  border-color: transparent;
+  padding: 0.5rem;
+  outline: none;
+}

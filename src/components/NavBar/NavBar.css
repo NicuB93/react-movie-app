@@ -1,0 +1,23 @@
+nav {
+  width: 350px;
+}
+
+.mobile {
+  display: none;
+}
+
+li {
+  padding: 1rem 0.5rem;
+}
+
+@media only screen and (max-width: 820px) {
+  .mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .regular {
+    display: none !important;
+  }
+}
