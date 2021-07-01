@@ -1,4 +1,4 @@
-#I let the default README alone.
+I let the default README alone.
 
 # Getting Started with Create React App
 
